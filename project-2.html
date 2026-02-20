@@ -3,281 +3,93 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Project 2 — Visual determinants of outdoor thermal comfort</title>
-  <meta name="description" content="Visual determinants of outdoor thermal comfort: integrating computer vision, perceptual surveys, and explainable AI." />
+  <title>Portfolio — Lujia Zhu</title>
+  <meta name="description" content="Selected design and research works by Lujia Zhu." />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-white text-zinc-900">
 
-  <!-- Top nav (match main page style) -->
+  <!-- ===== Top navigation ===== -->
   <header class="sticky top-0 z-50 border-b border-zinc-200 bg-white/80 backdrop-blur">
     <div class="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
-      <a href="index.html" class="font-semibold tracking-tight hover:opacity-80">Lujia Zhu</a>
+      <a href="index.html" class="font-semibold tracking-tight hover:opacity-80">
+        Lujia Zhu
+      </a>
 
       <nav class="hidden md:flex items-center gap-6 text-sm text-zinc-600">
-        <a href="index.html#overview" class="hover:text-zinc-900">Overview</a>
         <a href="index.html#projects" class="hover:text-zinc-900">Projects</a>
+        <a href="index.html#research" class="hover:text-zinc-900">Research</a>
         <a href="index.html#publications" class="hover:text-zinc-900">Publications</a>
         <a href="index.html#contact" class="hover:text-zinc-900">Contact</a>
       </nav>
-
-      <div class="flex items-center gap-2">
-        <a href="index.html#projects"
-           class="px-4 py-2 rounded-full border border-zinc-300 text-sm hover:bg-zinc-50">
-          ← Back
-        </a>
-        <!-- Optional: replace with your project repo link -->
-        <a href="#links"
-           class="px-4 py-2 rounded-full bg-zinc-900 text-white text-sm hover:bg-zinc-800">
-          Links
-        </a>
-      </div>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="mx-auto max-w-6xl px-6 pt-16 pb-10">
-    <p class="text-sm text-zinc-500">Project 1</p>
+  <!-- ===== Hero / Project intro ===== -->
+  <section class="mx-auto max-w-6xl px-6 pt-16 pb-12">
+    <a href="index.html#projects"
+       class="text-sm text-zinc-500 hover:text-zinc-900">
+      ← Back to projects
+    </a>
 
-    <h1 class="mt-4 text-4xl md:text-5xl font-semibold tracking-tight">
-      Visual determinants of outdoor thermal comfort
+    <h1 class="mt-6 text-4xl md:text-5xl font-semibold tracking-tight">
+      Portfolio
     </h1>
 
-    <p class="mt-6 text-lg md:text-xl text-zinc-600 max-w-3xl">
-      Understanding how colors, scene composition, and greenery shape perceived thermal sensation outdoors,
-      using computer vision + perceptual surveys + explainable machine learning.
+    <p class="mt-6 text-lg text-zinc-600 max-w-3xl">
+      A curated portfolio of selected works, including landscape architecture projects,
+      urban design explorations, and research-driven design experiments.
     </p>
 
+    <!-- Meta tags -->
     <div class="mt-8 flex flex-wrap gap-3 text-sm">
-      <span class="px-3 py-1 rounded-full bg-zinc-100">Computer Vision</span>
-      <span class="px-3 py-1 rounded-full bg-zinc-100">Perception Survey</span>
-      <span class="px-3 py-1 rounded-full bg-zinc-100">Explainable AI (SHAP)</span>
-      <span class="px-3 py-1 rounded-full bg-zinc-100">Urban Climate</span>
-    </div>
-
-    <!-- Hero media -->
-    <div class="mt-10 rounded-3xl overflow-hidden border border-zinc-200">
-      <div class="aspect-[16/9] bg-zinc-100 flex items-center justify-center text-zinc-500">
-        Put a key figure / pipeline diagram / teaser GIF here
-      </div>
+      <span class="px-3 py-1 rounded-full bg-zinc-100">Portfolio</span>
+      <span class="px-3 py-1 rounded-full bg-zinc-100">Design</span>
+      <span class="px-3 py-1 rounded-full bg-zinc-100">Urban & Landscape</span>
     </div>
   </section>
 
-  <!-- Section tabs (DeepMind-like) -->
-  <section class="mx-auto max-w-6xl px-6">
-    <div class="border-b border-zinc-200">
-      <div class="flex gap-6 text-sm text-zinc-600 overflow-x-auto py-3">
-        <a class="whitespace-nowrap hover:text-zinc-900" href="#overview">Overview</a>
-        <a class="whitespace-nowrap hover:text-zinc-900" href="#method">Method</a>
-        <a class="whitespace-nowrap hover:text-zinc-900" href="#findings">Key findings</a>
-        <a class="whitespace-nowrap hover:text-zinc-900" href="#artifacts">Figures & artifacts</a>
-        <a class="whitespace-nowrap hover:text-zinc-900" href="#links">Links</a>
-      </div>
-    </div>
-  </section>
-
+  <!-- ===== Portfolio PDF ===== -->
   <main class="mx-auto max-w-6xl px-6 pb-20">
 
-    <!-- Overview -->
-    <section id="overview" class="py-14">
-      <h2 class="text-2xl font-semibold">Overview</h2>
-      <div class="mt-6 grid md:grid-cols-3 gap-6">
-        <div class="p-6 rounded-2xl border border-zinc-200">
-          <h3 class="font-semibold">Problem</h3>
-          <p class="mt-2 text-sm text-zinc-600">
-            Thermal comfort is often modeled using physical climate variables, but people also react to what they see.
-          </p>
-        </div>
-        <div class="p-6 rounded-2xl border border-zinc-200">
-          <h3 class="font-semibold">Idea</h3>
-          <p class="mt-2 text-sm text-zinc-600">
-            Extract visual features from street-level images and connect them to thermal sensation votes.
-          </p>
-        </div>
-        <div class="p-6 rounded-2xl border border-zinc-200">
-          <h3 class="font-semibold">Outcome</h3>
-          <p class="mt-2 text-sm text-zinc-600">
-            Quantify which visual cues matter most, and make the model explainable for design implications.
-          </p>
-        </div>
-      </div>
-
-      <div class="mt-10 max-w-3xl text-zinc-700 leading-relaxed space-y-4">
-        <p>
-          This project explores the visual determinants of outdoor thermal comfort in tropical urban contexts.
-          Beyond air temperature, people’s thermal sensation can be influenced by colors, material appearance,
-          and perceived shade or openness in the visual scene.
-        </p>
-        <p>
-          By combining perceptual data (thermal sensation votes) with computer-vision-derived features and
-          explainable ML, the study provides interpretable evidence on how “what we see” shapes “what we feel.”
-        </p>
-      </div>
-    </section>
-
-    <!-- Method -->
-    <section id="method" class="py-14 border-t border-zinc-200">
-      <h2 class="text-2xl font-semibold">Method</h2>
-
-      <div class="mt-8 grid md:grid-cols-2 gap-6">
-        <div class="p-6 rounded-2xl border border-zinc-200">
-          <h3 class="text-lg font-semibold">1) Data</h3>
-          <ul class="mt-3 space-y-2 text-sm text-zinc-600 list-disc list-inside">
-            <li>Street-level / on-site images across diverse outdoor settings</li>
-            <li>Perceptual survey collecting thermal sensation votes (TSV)</li>
-            <li>Optional: microclimate measurements (e.g., temperature range, peak hours)</li>
-          </ul>
-        </div>
-
-        <div class="p-6 rounded-2xl border border-zinc-200">
-          <h3 class="text-lg font-semibold">2) Visual features</h3>
-          <ul class="mt-3 space-y-2 text-sm text-zinc-600 list-disc list-inside">
-            <li>Color metrics (hue composition, key color proportions)</li>
-            <li>Scene composition (segmentation-based class proportions)</li>
-            <li>Greenery / sky / building / pavement ratios</li>
-          </ul>
-        </div>
-
-        <div class="p-6 rounded-2xl border border-zinc-200">
-          <h3 class="text-lg font-semibold">3) Modeling</h3>
-          <ul class="mt-3 space-y-2 text-sm text-zinc-600 list-disc list-inside">
-            <li>Random Forest (baseline) + alternative models (optional)</li>
-            <li>Train/validation split and robustness checks</li>
-            <li>Explainability using SHAP to rank visual predictors</li>
-          </ul>
-        </div>
-
-        <div class="p-6 rounded-2xl border border-zinc-200">
-          <h3 class="text-lg font-semibold">4) Interpretation</h3>
-          <ul class="mt-3 space-y-2 text-sm text-zinc-600 list-disc list-inside">
-            <li>Feature importance & partial dependence behavior</li>
-            <li>Non-linear / diminishing effects (e.g., greenery threshold)</li>
-            <li>Design implications for climate-responsive urban spaces</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="mt-10 p-6 rounded-2xl border border-zinc-200 bg-zinc-50">
-        <p class="text-sm text-zinc-700">
-          Tip: replace the bullets above with your exact dataset sizes (e.g., number of images, participants)
-          once you’re ready — this template is intentionally “publication-safe” and not overly specific.
-        </p>
-      </div>
-    </section>
-
-    <!-- Key findings -->
-    <section id="findings" class="py-14 border-t border-zinc-200">
-      <h2 class="text-2xl font-semibold">Key findings</h2>
-
-      <div class="mt-8 grid md:grid-cols-3 gap-6">
-        <div class="p-6 rounded-2xl border border-zinc-200">
-          <h3 class="font-semibold">Colors matter</h3>
-          <p class="mt-2 text-sm text-zinc-600">
-            Certain color cues strongly correlate with perceived coolness/warmth.
-          </p>
-        </div>
-        <div class="p-6 rounded-2xl border border-zinc-200">
-          <h3 class="font-semibold">Greenery isn’t always linear</h3>
-          <p class="mt-2 text-sm text-zinc-600">
-            The effect of greenery can show diminishing returns beyond a threshold.
-          </p>
-        </div>
-        <div class="p-6 rounded-2xl border border-zinc-200">
-          <h3 class="font-semibold">Explainability helps design</h3>
-          <p class="mt-2 text-sm text-zinc-600">
-            SHAP outputs translate ML findings into interpretable design insights.
-          </p>
-        </div>
-      </div>
-
-      <div class="mt-10 max-w-3xl text-zinc-700 leading-relaxed space-y-4">
-        <p>
-          These findings challenge a purely “physical metrics only” approach and suggest designers can
-          consider visual/psychological cues alongside shading, ventilation, and materials.
-        </p>
-      </div>
-    </section>
-
-    <!-- Figures & artifacts -->
-    <section id="artifacts" class="py-14 border-t border-zinc-200">
-      <h2 class="text-2xl font-semibold">Figures & artifacts</h2>
-      <p class="mt-3 text-zinc-600 max-w-2xl">
-        Add your figures as images in <code class="px-1.5 py-0.5 rounded bg-zinc-100 text-zinc-800">/assets/images/</code>
-        and replace the placeholders below.
+    <!-- Short guidance -->
+    <section class="py-6">
+      <p class="text-sm text-zinc-500 max-w-3xl">
+        The portfolio is presented as a PDF for optimal layout control.
+        You can scroll through the pages directly below or open it in a new tab.
       </p>
 
-      <div class="mt-8 grid md:grid-cols-2 gap-6">
-        <div class="rounded-2xl border border-zinc-200 overflow-hidden">
-          <div class="aspect-[4/3] bg-zinc-100 flex items-center justify-center text-zinc-500">
-            Figure 1 — Pipeline / framework diagram
-          </div>
-          <div class="p-5">
-            <div class="text-sm text-zinc-500">Figure</div>
-            <div class="mt-1 font-semibold">Workflow overview</div>
-            <p class="mt-2 text-sm text-zinc-600">
-              Computer vision → features → ML model → SHAP interpretation.
-            </p>
-          </div>
-        </div>
-
-        <div class="rounded-2xl border border-zinc-200 overflow-hidden">
-          <div class="aspect-[4/3] bg-zinc-100 flex items-center justify-center text-zinc-500">
-            Figure 2 — SHAP summary / key results
-          </div>
-          <div class="p-5">
-            <div class="text-sm text-zinc-500">Figure</div>
-            <div class="mt-1 font-semibold">Explainability results</div>
-            <p class="mt-2 text-sm text-zinc-600">
-              Visual features ranked by contribution to perceived thermal sensation.
-            </p>
-          </div>
-        </div>
+      <div class="mt-4 flex gap-3">
+        <a href="assets/portfolio.pdf" target="_blank"
+           class="px-4 py-2 rounded-full border border-zinc-300 text-sm hover:bg-zinc-50">
+          Open PDF in new tab
+        </a>
+        <a href="assets/portfolio.pdf" download
+           class="px-4 py-2 rounded-full border border-zinc-300 text-sm hover:bg-zinc-50">
+          Download PDF
+        </a>
       </div>
     </section>
 
-    <!-- Links -->
-    <section id="links" class="py-14 border-t border-zinc-200">
-      <h2 class="text-2xl font-semibold">Links</h2>
-
-      <div class="mt-6 flex flex-wrap gap-4 text-sm">
-        <!-- Replace # with real links when ready -->
-        <a href="#"
-           class="px-4 py-2 rounded-full border border-zinc-300 hover:bg-zinc-50">
-          📄 Journal paper (DOI)
-        </a>
-
-        <a href="#"
-           class="px-4 py-2 rounded-full border border-zinc-300 hover:bg-zinc-50">
-          💻 Code repository
-        </a>
-
-        <a href="#"
-           class="px-4 py-2 rounded-full border border-zinc-300 hover:bg-zinc-50">
-          📊 Dataset / Supplement
-        </a>
-
-        <a href="index.html#contact"
-           class="px-4 py-2 rounded-full bg-zinc-900 text-white hover:bg-zinc-800">
-          Contact
-        </a>
-      </div>
-
-      <div class="mt-10 p-6 rounded-2xl border border-zinc-200 bg-zinc-50">
-        <p class="text-sm text-zinc-700">
-          Want this page to look more “DeepMind-like”? Add a hero GIF + 2–3 crisp metrics (e.g., #images, #participants, model accuracy),
-          and keep each paragraph under ~3 lines.
-        </p>
-      </div>
+    <!-- Embedded PDF -->
+    <section class="mt-8 rounded-2xl overflow-hidden border border-zinc-200">
+      <iframe
+        src="assets/portfolio.pdf"
+        class="w-full h-[85vh]"
+        loading="lazy">
+      </iframe>
     </section>
 
   </main>
 
-  <!-- Footer -->
+  <!-- ===== Footer ===== -->
   <footer class="border-t border-zinc-200">
     <div class="mx-auto max-w-6xl px-6 py-10 text-sm text-zinc-500 flex items-center justify-between flex-wrap gap-3">
-      <span>© 2026 Lujia Zhu · Project 1</span>
-      <a class="hover:text-zinc-900" href="#top">Back to top</a>
+      <span>© 2026 Lujia Zhu</span>
+      <a href="index.html#projects" class="hover:text-zinc-900">
+        Back to projects
+      </a>
     </div>
   </footer>
 
