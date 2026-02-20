@@ -1,108 +1,374 @@
-<section class="mx-auto max-w-6xl px-6 pt-20 pb-16">
-  <h1 class="text-5xl md:text-6xl font-semibold tracking-tight">
-    Lujia Zhu
-  </h1>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lujia Zhu — Research</title>
+  <meta name="description" content="A place for ideas exchange — education, research interests, projects, and publications." />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-  <p class="mt-6 text-xl text-zinc-600 max-w-3xl">
-    PhD researcher at the National University of Singapore, working at the intersection of
-    <span class="text-zinc-900 font-medium">urban climate</span>,
-    <span class="text-zinc-900 font-medium">visual perception</span>,
-    and
-    <span class="text-zinc-900 font-medium">machine learning</span>.
-  </p>
+<body class="bg-white text-zinc-900">
+  <!-- Top nav (clean + sticky like DeepMind) -->
+  <header class="sticky top-0 z-50 border-b border-zinc-200 bg-white/80 backdrop-blur">
+    <div class="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+      <a href="#" class="font-semibold tracking-tight hover:opacity-80">Lujia Zhu</a>
 
-  <div class="mt-8 flex flex-wrap gap-3">
-    <a href="#projects"
-       class="px-5 py-2.5 rounded-full bg-zinc-900 text-white text-sm hover:bg-zinc-800">
-      View projects
-    </a>
-    <a href="#research"
-       class="px-5 py-2.5 rounded-full border border-zinc-300 text-sm hover:bg-zinc-50">
-      Research interests
-    </a>
-  </div>
-</section>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-zinc-600">
+        <a href="#overview" class="hover:text-zinc-900">Overview</a>
+        <a href="#projects" class="hover:text-zinc-900">Projects</a>
+        <a href="#education" class="hover:text-zinc-900">Education</a>
+        <a href="#publications" class="hover:text-zinc-900">Publications</a>
+        <a href="#contact" class="hover:text-zinc-900">Contact</a>
+      </nav>
 
+      <div class="flex items-center gap-2">
+        <!-- Replace with your actual GitHub repo/profile if you want -->
+        <a href="https://github.com/ziwaka99"
+           class="px-4 py-2 rounded-full border border-zinc-300 text-sm hover:bg-zinc-50">
+          GitHub
+        </a>
+        <a href="#projects"
+           class="px-4 py-2 rounded-full bg-zinc-900 text-white text-sm hover:bg-zinc-800">
+          View projects
+        </a>
+      </div>
+    </div>
+  </header>
 
-<section class="mx-auto max-w-6xl px-6 py-14 border-t border-zinc-200">
-  <h2 class="text-2xl font-semibold">Education</h2>
-
-  <div class="mt-6 space-y-4 max-w-3xl text-zinc-700">
-    <p>
-      <strong>PhD in Built Environment</strong><br />
-      National University of Singapore (NUS), Singapore
-    </p>
-
-    <p>
-      <strong>MSc in Landscape Architecture</strong><br />
-      (可选：学校名)
-    </p>
-
-    <p>
-      <strong>BSc / BEng</strong><br />
-      (可选：学校名)
-    </p>
-  </div>
-</section>
-
-<section id="research" class="mx-auto max-w-6xl px-6 py-14 border-t border-zinc-200">
-  <h2 class="text-2xl font-semibold">Research interests</h2>
-
-  <div class="mt-8 grid md:grid-cols-3 gap-6">
-    <div class="p-6 rounded-2xl border border-zinc-200">
-      <h3 class="font-semibold">Outdoor thermal comfort</h3>
-      <p class="mt-2 text-sm text-zinc-600">
-        Image-based and perception-driven approaches to understanding thermal experience in urban environments.
-      </p>
+  <!-- Hero (slide-like layout) -->
+  <section class="mx-auto max-w-6xl px-6 pt-16 pb-10">
+    <div class="flex items-center justify-between">
+      <p id="slideIndicator" class="text-sm text-zinc-500">Slide 1 of 3</p>
+      <div class="flex gap-2">
+        <button id="prevBtn"
+                class="px-3 py-1.5 rounded-full border border-zinc-300 text-sm hover:bg-zinc-50"
+                aria-label="Previous slide">
+          Prev
+        </button>
+        <button id="nextBtn"
+                class="px-3 py-1.5 rounded-full border border-zinc-300 text-sm hover:bg-zinc-50"
+                aria-label="Next slide">
+          Next
+        </button>
+      </div>
     </div>
 
-    <div class="p-6 rounded-2xl border border-zinc-200">
-      <h3 class="font-semibold">Visual perception & climate</h3>
-      <p class="mt-2 text-sm text-zinc-600">
-        How colors, spatial composition, and greenery influence perceived heat and comfort.
-      </p>
+    <h1 id="heroTitle" class="mt-4 text-5xl md:text-6xl font-semibold tracking-tight">
+      Welcome to Z-World!
+    </h1>
+
+    <p id="heroSubtitle" class="mt-6 text-lg md:text-xl text-zinc-600 max-w-3xl">
+      A developer's corner filled with creativity and innovation.
+    </p>
+
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href="#overview"
+         class="px-5 py-2.5 rounded-full bg-zinc-900 text-white text-sm hover:bg-zinc-800">
+        Explore overview
+      </a>
+      <a href="#publications"
+         class="px-5 py-2.5 rounded-full border border-zinc-300 text-sm hover:bg-zinc-50">
+        Publications
+      </a>
+      <a href="#contact"
+         class="px-5 py-2.5 rounded-full border border-zinc-300 text-sm hover:bg-zinc-50">
+        Get in touch
+      </a>
     </div>
 
-    <div class="p-6 rounded-2xl border border-zinc-200">
-      <h3 class="font-semibold">AI-assisted urban design</h3>
-      <p class="mt-2 text-sm text-zinc-600">
-        Participatory and generative design tools integrating computer vision and machine learning.
-      </p>
+    <!-- Hero media (use your own image / GIF later) -->
+    <div class="mt-10 rounded-3xl overflow-hidden border border-zinc-200">
+      <div id="heroMedia" class="aspect-[16/9] bg-zinc-100 flex items-center justify-center text-zinc-500">
+        Add a hero figure / GIF / screenshot here
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="projects" class="mx-auto max-w-6xl px-6 py-14 border-t border-zinc-200">
-  <h2 class="text-2xl font-semibold">Selected projects</h2>
+  <!-- Page tabs (like "Overview / Model family / Try") -->
+  <section class="mx-auto max-w-6xl px-6">
+    <div class="border-b border-zinc-200">
+      <div class="flex gap-6 text-sm text-zinc-600 overflow-x-auto py-3">
+        <a class="whitespace-nowrap hover:text-zinc-900" href="#overview">Overview</a>
+        <a class="whitespace-nowrap hover:text-zinc-900" href="#research">Research interests</a>
+        <a class="whitespace-nowrap hover:text-zinc-900" href="#projects">Featured projects</a>
+        <a class="whitespace-nowrap hover:text-zinc-900" href="#experience">Experience</a>
+        <a class="whitespace-nowrap hover:text-zinc-900" href="#education">Education</a>
+        <a class="whitespace-nowrap hover:text-zinc-900" href="#publications">Publications</a>
+        <a class="whitespace-nowrap hover:text-zinc-900" href="#contact">Contact</a>
+      </div>
+    </div>
+  </section>
 
-  <div class="mt-8 grid md:grid-cols-2 gap-6">
+  <main class="mx-auto max-w-6xl px-6 pb-20">
+    <!-- Overview -->
+    <section id="overview" class="py-14">
+      <h2 class="text-2xl font-semibold">About</h2>
+      <div class="mt-6 max-w-3xl text-zinc-700 leading-relaxed space-y-4">
+        <p>I’m a passionate designer / researcher.</p>
+        <p>
+          Currently focused on thermal comfort, while actively exploring the potential applications of
+          innovative technologies in urban interventions.
+        </p>
+      </div>
+    </section>
 
-    <!-- Project card -->
-    <a href="project-thermal-vision.html"
-       class="block p-6 rounded-2xl border border-zinc-200 hover:shadow-md transition">
-      <h3 class="text-xl font-semibold">
-        Visual determinants of outdoor thermal comfort
-      </h3>
-      <p class="mt-2 text-sm text-zinc-600">
-        Integrating computer vision, perceptual surveys, and explainable AI to model thermal sensation.
+    <!-- Research interests -->
+    <section id="research" class="py-14 border-t border-zinc-200">
+      <h2 class="text-2xl font-semibold">Research interests</h2>
+
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl border border-zinc-200">
+          <h3 class="font-semibold">Computer vision</h3>
+          <p class="mt-2 text-sm text-zinc-600">
+            Visual features, scene understanding, and perception-driven modeling for urban environments.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-zinc-200">
+          <h3 class="font-semibold">Thermal comfort & cooling devices</h3>
+          <p class="mt-2 text-sm text-zinc-600">
+            Outdoor thermal comfort assessment, interventions, and low-cost cooling strategies.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-zinc-200">
+          <h3 class="font-semibold">Perception study (neuroscience)</h3>
+          <p class="mt-2 text-sm text-zinc-600">
+            How perception and cognition shape comfort, preference, and behavioral responses.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured projects (cards -> subpages) -->
+    <section id="projects" class="py-14 border-t border-zinc-200">
+      <div class="flex items-end justify-between gap-6 flex-wrap">
+        <div>
+          <h2 class="text-2xl font-semibold">Featured projects</h2>
+          <p class="mt-3 text-zinc-600 max-w-2xl">
+            Click any project to open a dedicated project page (subpage).
+          </p>
+        </div>
+        <a href="#contact"
+           class="px-4 py-2 rounded-full border border-zinc-300 text-sm hover:bg-zinc-50">
+          Collaborate
+        </a>
+      </div>
+
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <a href="project-1.html"
+           class="block p-6 rounded-2xl border border-zinc-200 hover:shadow-md transition">
+          <div class="text-sm text-zinc-500">Project</div>
+          <h3 class="mt-2 text-xl font-semibold">Project 1 — Updating</h3>
+          <p class="mt-2 text-sm text-zinc-600">
+            Short one-liner describing what this project is about.
+          </p>
+          <p class="mt-4 text-sm text-zinc-500">→ View project</p>
+        </a>
+
+        <a href="project-2.html"
+           class="block p-6 rounded-2xl border border-zinc-200 hover:shadow-md transition">
+          <div class="text-sm text-zinc-500">Project</div>
+          <h3 class="mt-2 text-xl font-semibold">Project 2 — Updating</h3>
+          <p class="mt-2 text-sm text-zinc-600">
+            Short one-liner describing what this project is about.
+          </p>
+          <p class="mt-4 text-sm text-zinc-500">→ View project</p>
+        </a>
+
+        <a href="project-3.html"
+           class="block p-6 rounded-2xl border border-zinc-200 hover:shadow-md transition">
+          <div class="text-sm text-zinc-500">Project</div>
+          <h3 class="mt-2 text-xl font-semibold">Project 3 — Updating</h3>
+          <p class="mt-2 text-sm text-zinc-600">
+            Short one-liner describing what this project is about.
+          </p>
+          <p class="mt-4 text-sm text-zinc-500">→ View project</p>
+        </a>
+
+        <a href="project-4.html"
+           class="block p-6 rounded-2xl border border-zinc-200 hover:shadow-md transition">
+          <div class="text-sm text-zinc-500">Project</div>
+          <h3 class="mt-2 text-xl font-semibold">Project 4 — Updating</h3>
+          <p class="mt-2 text-sm text-zinc-600">
+            Short one-liner describing what this project is about.
+          </p>
+          <p class="mt-4 text-sm text-zinc-500">→ View project</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="py-14 border-t border-zinc-200">
+      <h2 class="text-2xl font-semibold">Experience</h2>
+
+      <div class="mt-8 grid gap-6">
+        <div class="p-6 rounded-2xl border border-zinc-200">
+          <h3 class="text-lg font-semibold">Research Assistant (Urban studies, Planning and Health)</h3>
+          <p class="mt-2 text-sm text-zinc-600">
+            NUS Business School · Part-time · Jan 2025 – Sep 2025 · Singapore · On-site
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-zinc-200">
+          <h3 class="text-lg font-semibold">Research Assistant (Thermal comfort)</h3>
+          <p class="mt-2 text-sm text-zinc-600">
+            City Syntax Lab · Part-time · Jan 2024 – Aug 2025 · Singapore · On-site
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="py-14 border-t border-zinc-200">
+      <h2 class="text-2xl font-semibold">Education</h2>
+
+      <div class="mt-8 grid gap-6">
+        <div class="p-6 rounded-2xl border border-zinc-200">
+          <div class="text-sm text-zinc-500">NUS College of Design & Engineering</div>
+          <h3 class="mt-2 text-lg font-semibold">Doctor of Philosophy (PhD), Built Environment</h3>
+          <p class="mt-2 text-sm text-zinc-600">2025 – Present</p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-zinc-200">
+          <div class="text-sm text-zinc-500">NUS College of Design & Engineering</div>
+          <h3 class="mt-2 text-lg font-semibold">Master of Landscape Architecture</h3>
+          <p class="mt-2 text-sm text-zinc-600">2023 – 2025</p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-zinc-200">
+          <div class="text-sm text-zinc-500">Southeast University</div>
+          <h3 class="mt-2 text-lg font-semibold">Bachelor of Engineering (BE), Landscape Architecture</h3>
+          <p class="mt-2 text-sm text-zinc-600">2018 – 2023</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="py-14 border-t border-zinc-200">
+      <h2 class="text-2xl font-semibold">Publications</h2>
+
+      <div class="mt-8 grid gap-6">
+        <article class="p-6 rounded-2xl border border-zinc-200">
+          <h3 class="text-lg font-semibold">
+            Visual determinants of outdoor thermal comfort: integrating explainable AI and perceptual assessments
+          </h3>
+          <p class="mt-2 text-sm text-zinc-600">
+            Lujia Zhu, Holly W. Samuelson, Filip Biljecki, Chun Liang Tan, Nyuk Hien Wong, Yu Qian Ang ·
+            <span class="italic">Building and Environment</span>, Volume 293, 2026, 114322
+          </p>
+          <div class="mt-4">
+            <a class="text-sm text-zinc-500 hover:text-zinc-900 underline underline-offset-4"
+               href="https://doi.org/10.1016/j.buildenv.2026.114322">
+              DOI
+            </a>
+          </div>
+        </article>
+
+        <article class="p-6 rounded-2xl border border-zinc-200">
+          <h3 class="text-lg font-semibold">
+            From Sight to Sensation: Understanding Visual Elements’ Impact on Thermal Comfort via Computer Vision and Thermal Voting
+          </h3>
+          <p class="mt-2 text-sm text-zinc-600">
+            Lujia Zhu, Holly Samuelson, Nyuk Wong Hien, Yu Ang Qian ·
+            ASim Conference 2024 · 5, 555–562
+          </p>
+          <div class="mt-4">
+            <a class="text-sm text-zinc-500 hover:text-zinc-900 underline underline-offset-4"
+               href="https://doi.org/10.69357/asim2024.1170">
+              DOI
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-14 border-t border-zinc-200">
+      <h2 class="text-2xl font-semibold">Get in touch</h2>
+
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-2xl border border-zinc-200">
+          <div class="text-sm text-zinc-500">GitHub</div>
+          <a class="mt-2 inline-block text-lg font-semibold hover:opacity-80"
+             href="https://github.com/ziwaka99">
+            @ziwaka99
+          </a>
+          <p class="mt-2 text-sm text-zinc-600">Open-source, prototypes, and project updates.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-zinc-200">
+          <div class="text-sm text-zinc-500">Email</div>
+          <a class="mt-2 inline-block text-lg font-semibold hover:opacity-80"
+             href="mailto:zhu.lujia@u.nus.edu">
+            zhu.lujia@u.nus.edu
+          </a>
+          <p class="mt-2 text-sm text-zinc-600">For collaboration, talks, or research discussions.</p>
+        </div>
+      </div>
+
+      <p class="mt-10 text-sm text-zinc-500">
+        ⭐ If you like my projects, please consider giving them a star!
       </p>
-      <p class="mt-4 text-sm text-zinc-500">
-        → View project
-      </p>
-    </a>
+    </section>
+  </main>
 
-    <a href="project-tripcard.html"
-       class="block p-6 rounded-2xl border border-zinc-200 hover:shadow-md transition">
-      <h3 class="text-xl font-semibold">
-        TripCard: participatory activity-based urban design
-      </h3>
-      <p class="mt-2 text-sm text-zinc-600">
-        A graph-based framework for collecting public intent and generating spatial design suggestions.
-      </p>
-      <p class="mt-4 text-sm text-zinc-500">
-        → View project
-      </p>
-    </a>
+  <footer class="border-t border-zinc-200">
+    <div class="mx-auto max-w-6xl px-6 py-10 text-sm text-zinc-500 flex items-center justify-between flex-wrap gap-3">
+      <span>Made with ❤️ by ziwaka99</span>
+      <a class="hover:text-zinc-900" href="#top">Back to top</a>
+    </div>
+  </footer>
 
-  </div>
-</section>
+  <!-- Tiny slide logic (lightweight, no frameworks) -->
+  <script>
+    const slides = [
+      {
+        title: "Welcome to Z-World!",
+        subtitle: "A developer's corner filled with creativity and innovation.",
+        mediaText: "Add a hero figure / GIF / screenshot here"
+      },
+      {
+        title: "Thermal comfort × Visual perception",
+        subtitle: "Image-based outdoor comfort research with computer vision and explainable ML.",
+        mediaText: "Optional: show a figure, pipeline, or demo screenshot"
+      },
+      {
+        title: "Urban interventions with AI",
+        subtitle: "Exploring how ML and interactive tools can support design and participation.",
+        mediaText: "Optional: show a project teaser or UI mock"
+      }
+    ];
+
+    let idx = 0;
+    const indicator = document.getElementById("slideIndicator");
+    const titleEl = document.getElementById("heroTitle");
+    const subEl = document.getElementById("heroSubtitle");
+    const mediaEl = document.getElementById("heroMedia");
+
+    function render() {
+      const s = slides[idx];
+      indicator.textContent = `Slide ${idx + 1} of ${slides.length}`;
+      titleEl.textContent = s.title;
+      subEl.textContent = s.subtitle;
+      mediaEl.textContent = s.mediaText;
+    }
+
+    document.getElementById("prevBtn").addEventListener("click", () => {
+      idx = (idx - 1 + slides.length) % slides.length;
+      render();
+    });
+
+    document.getElementById("nextBtn").addEventListener("click", () => {
+      idx = (idx + 1) % slides.length;
+      render();
+    });
+
+    // Optional auto-rotate (comment out if you prefer manual only)
+    // setInterval(() => { idx = (idx + 1) % slides.length; render(); }, 6500);
+
+    render();
+  </script>
+</body>
+</html>
