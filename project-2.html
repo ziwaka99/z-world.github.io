@@ -6,6 +6,7 @@
   <title>Portfolio 2023 to 2025 — Lujia Zhu</title>
   <meta name="description" content="Selected design and research works by Lujia Zhu." />
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/pdf-viewer.css" />
 </head>
 
 <body class="bg-white text-zinc-900">
@@ -48,36 +49,79 @@
       <span class="px-3 py-1 rounded-full bg-zinc-100">Design</span>
       <span class="px-3 py-1 rounded-full bg-zinc-100">Urban & Landscape</span>
     </div>
+
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href="#viewer"
+         class="px-4 py-2 rounded-full bg-zinc-900 text-white text-sm hover:bg-zinc-800">
+        Read the portfolio
+      </a>
+      <a href="assets/images/project-2/portfolio_nus.pdf" target="_blank" rel="noopener"
+         class="px-4 py-2 rounded-full border border-zinc-300 text-sm hover:bg-zinc-50">
+        Open PDF in new tab
+      </a>
+      <a href="assets/images/project-2/portfolio_nus.pdf" download
+         class="px-4 py-2 rounded-full border border-zinc-300 text-sm hover:bg-zinc-50">
+        Download PDF
+      </a>
+    </div>
   </section>
 
-  <!-- ===== Portfolio PDF ===== -->
-  <main class="mx-auto max-w-6xl px-6 pb-20">
+  <!-- ===== Portfolio viewer — full screen, one page at a time ===== -->
+  <section id="viewer"
+           class="pdf-viewer relative w-full bg-zinc-950 text-zinc-100"
+           data-pdf-viewer
+           data-pdf-state="loading"
+           data-pdf-src="assets/images/project-2/portfolio_nus.pdf">
 
-    <!-- Short guidance -->
-    <section class="py-6">
+    <div class="pdf-stage relative">
 
-      <div class="mt-4 flex gap-3">
-        <a href="assets/portfolio.pdf" target="_blank"
-           class="px-4 py-2 rounded-full border border-zinc-300 text-sm hover:bg-zinc-50">
-          Open PDF in new tab
-        </a>
-        <a href="assets/portfolio.pdf" download
-           class="px-4 py-2 rounded-full border border-zinc-300 text-sm hover:bg-zinc-50">
-          Download PDF
-        </a>
+      <!-- The page itself, fitted to the stage -->
+      <div data-pdf-frame
+           class="absolute inset-0 flex items-center justify-center px-14 py-10 sm:px-24 sm:py-12">
+        <canvas data-pdf-canvas class="pdf-canvas rounded-sm shadow-2xl shadow-black/60"></canvas>
+
+        <div data-pdf-status
+             class="pdf-status absolute inset-0 flex items-center justify-center px-8 text-center text-sm text-zinc-400">
+          Loading portfolio…
+        </div>
       </div>
-    </section>
 
-    <!-- Embedded PDF -->
-    <section class="mt-8 rounded-2xl overflow-hidden border border-zinc-200">
-      <iframe
-        src="assets/images/project-2/portfolio_nus.pdf"
-        class="w-full h-[85vh]"
-        loading="lazy">
-      </iframe>
-    </section>
+      <!-- Previous page -->
+      <button type="button" data-pdf-prev aria-label="Previous page"
+              class="absolute left-2 sm:left-6 top-1/2 z-10 grid h-11 w-11 sm:h-14 sm:w-14 -translate-y-1/2 place-items-center rounded-full border border-white/20 bg-black/40 text-zinc-100 backdrop-blur transition hover:bg-white hover:text-zinc-900 disabled:pointer-events-none disabled:opacity-20">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+             stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true">
+          <path d="M15 5l-7 7 7 7" />
+        </svg>
+      </button>
 
-  </main>
+      <!-- Next page -->
+      <button type="button" data-pdf-next aria-label="Next page"
+              class="absolute right-2 sm:right-6 top-1/2 z-10 grid h-11 w-11 sm:h-14 sm:w-14 -translate-y-1/2 place-items-center rounded-full border border-white/20 bg-black/40 text-zinc-100 backdrop-blur transition hover:bg-white hover:text-zinc-900 disabled:pointer-events-none disabled:opacity-20">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+             stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true">
+          <path d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      <!-- Page counter + full screen -->
+      <div class="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 items-center gap-3 rounded-full border border-white/15 bg-black/50 px-4 py-2 text-xs text-zinc-300 backdrop-blur">
+        <span data-pdf-counter class="tabular-nums text-zinc-100">– / –</span>
+        <span class="hidden sm:block h-3 w-px bg-white/20"></span>
+        <span class="hidden sm:block">Use ← → to flip</span>
+        <span class="h-3 w-px bg-white/20"></span>
+        <button type="button" data-pdf-fullscreen class="transition hover:text-white">
+          Full screen
+        </button>
+      </div>
+
+      <!-- Reading progress -->
+      <div class="absolute inset-x-0 bottom-0 h-0.5 bg-white/10">
+        <div data-pdf-bar class="pdf-progress-bar h-full w-0 bg-white/70"></div>
+      </div>
+
+    </div>
+  </section>
 
   <!-- ===== Footer ===== -->
   <footer class="border-t border-zinc-200">
@@ -89,5 +133,7 @@
     </div>
   </footer>
 
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script defer src="assets/js/pdf-viewer.js"></script>
 </body>
 </html>

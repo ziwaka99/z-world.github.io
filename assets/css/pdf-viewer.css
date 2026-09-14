@@ -1,0 +1,69 @@
+/* ------------------------------------------------------------------
+   Full-screen, one-page-at-a-time PDF viewer.
+   Used by project-2.html / project-3.html — see assets/js/pdf-viewer.js
+------------------------------------------------------------------ */
+
+:root {
+  /* Filled in by the script with the sticky header's real height. */
+  --pdf-header-h: 0px;
+}
+
+.pdf-viewer {
+  scroll-margin-top: var(--pdf-header-h);
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* One screenful, minus whatever the sticky header covers. */
+.pdf-stage {
+  height: calc(100vh - var(--pdf-header-h));
+  min-height: 26rem;
+}
+
+/* svh keeps mobile browser chrome from cropping the page. */
+@supports (height: 100svh) {
+  .pdf-stage {
+    height: calc(100svh - var(--pdf-header-h));
+  }
+}
+
+/* True full screen: no page header to dodge, so take the whole viewport.
+   The -webkit- variants must stay in their own rules — browsers drop a
+   whole selector list when one selector in it is unknown. */
+.pdf-viewer:fullscreen {
+  background: #09090b;
+}
+
+.pdf-viewer:-webkit-full-screen {
+  background: #09090b;
+}
+
+.pdf-viewer:fullscreen .pdf-stage {
+  height: 100vh;
+}
+
+.pdf-viewer:-webkit-full-screen .pdf-stage {
+  height: 100vh;
+}
+
+.pdf-canvas {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  background: #fff;
+  transition: opacity 0.18s ease;
+}
+
+/* Before the first page lands (or after a failure) there is nothing to
+   show, so keep the blank white canvas out of the way. */
+.pdf-viewer:not([data-pdf-state="ready"]) .pdf-canvas {
+  opacity: 0;
+}
+
+.pdf-viewer[data-pdf-state="ready"] .pdf-status {
+  display: none;
+}
+
+.pdf-progress-bar {
+  transition: width 0.18s ease;
+}

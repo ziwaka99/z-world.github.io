@@ -182,7 +182,7 @@
        class="block p-6 rounded-2xl border border-zinc-200 hover:shadow-md transition">
 
       <!-- 16:8 image -->
-      <div class="aspect-[16/8] w-full rounded-xl overflow-hidden bg-zinc-white">
+      <div class="aspect-[16/8] w-full rounded-xl overflow-hidden bg-white">
         <img src="assets/images/project-1/Figure_1.png"
              class="w-full h-full object-cover"
              alt="Project 1">
@@ -310,7 +310,7 @@
             From Sight to Sensation: Understanding Visual Elements’ Impact on Thermal Comfort via Computer Vision and Thermal Voting
           </h3>
           <p class="mt-2 text-sm text-zinc-600">
-            Lujia Zhu, Holly Samuelson, Nyuk Wong Hien, Yu Ang Qian ·
+            Lujia Zhu, Holly Samuelson, Nyuk Wong Hien, Yu Qian Ang·
             ASim Conference 2024 · 5, 555–562
           </p>
           <div class="mt-4">
@@ -360,54 +360,5 @@
     </div>
   </footer>
 
-  <!-- Tiny slide logic (lightweight, no frameworks) -->
-  <script>
-    const slides = [
-      {
-        title: "Welcome to Z-World!",
-        subtitle: "A developer's corner filled with creativity and innovation.",
-        mediaText: "Add a hero figure / GIF / screenshot here"
-      },
-      {
-        title: "Thermal comfort × Visual perception",
-        subtitle: "Image-based outdoor comfort research with computer vision and explainable ML.",
-        mediaText: "Optional: show a figure, pipeline, or demo screenshot"
-      },
-      {
-        title: "Urban interventions with AI",
-        subtitle: "Exploring how ML and interactive tools can support design and participation.",
-        mediaText: "Optional: show a project teaser or UI mock"
-      }
-    ];
-
-    let idx = 0;
-    const indicator = document.getElementById("slideIndicator");
-    const titleEl = document.getElementById("heroTitle");
-    const subEl = document.getElementById("heroSubtitle");
-    const mediaEl = document.getElementById("heroMedia");
-
-    function render() {
-      const s = slides[idx];
-      indicator.textContent = `Slide ${idx + 1} of ${slides.length}`;
-      titleEl.textContent = s.title;
-      subEl.textContent = s.subtitle;
-      mediaEl.textContent = s.mediaText;
-    }
-
-    document.getElementById("prevBtn").addEventListener("click", () => {
-      idx = (idx - 1 + slides.length) % slides.length;
-      render();
-    });
-
-    document.getElementById("nextBtn").addEventListener("click", () => {
-      idx = (idx + 1) % slides.length;
-      render();
-    });
-
-    // Optional auto-rotate (comment out if you prefer manual only)
-    // setInterval(() => { idx = (idx + 1) % slides.length; render(); }, 6500);
-
-    render();
-  </script>
 </body>
 </html>
