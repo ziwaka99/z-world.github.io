@@ -6,6 +6,30 @@
   <title>Lujia Zhu — Research</title>
   <meta name="description" content="A place for ideas exchange — education, research interests, projects, and publications." />
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Project cards: a soft colour halo on hover, in place of the grey shadow. */
+    .project-card {
+      transition: transform .3s ease, box-shadow .35s ease, border-color .3s ease;
+    }
+
+    .project-card:hover,
+    .project-card:focus-visible {
+      transform: translateY(-3px);
+      border-color: rgba(168, 85, 247, .25);
+      box-shadow:
+        -12px   4px 30px -10px rgba(236,  72, 153, .45),
+         12px   4px 30px -10px rgba( 56, 189, 248, .45),
+           0px 16px 34px -14px rgba(168,  85, 247, .40),
+           0px -8px 26px -12px rgba(250, 204,  21, .32);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .project-card { transition: box-shadow .2s ease, border-color .2s ease; }
+      .project-card:hover,
+      .project-card:focus-visible { transform: none; }
+    }
+  </style>
 </head>
 
 <body class="bg-white text-zinc-900">
@@ -160,7 +184,7 @@
   
     <!-- personawalk -->
     <a href="personawalk.html"
-       class="block p-6 rounded-2xl border border-zinc-200 hover:shadow-md transition">
+       class="project-card block p-6 rounded-2xl border border-zinc-200">
 
       <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-white">
         <img src="assets/images/personawalk/persona.gif"
@@ -197,7 +221,7 @@
 
     <!-- Project 1 -->
     <a href="project-1.html"
-       class="block p-6 rounded-2xl border border-zinc-200 hover:shadow-md transition">
+       class="project-card block p-6 rounded-2xl border border-zinc-200">
 
       <!-- 16:8 image -->
       <div class="aspect-[16/8] w-full rounded-xl overflow-hidden bg-white">
@@ -216,7 +240,7 @@
 
     <!-- Project 2 -->
     <a href="project-2.html"
-       class="block p-6 rounded-2xl border border-zinc-200 hover:shadow-md transition">
+       class="project-card block p-6 rounded-2xl border border-zinc-200">
 
       <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-zinc-100">
         <img src="assets/images/project-2/portfolio_nus_cover.jpeg"
@@ -234,7 +258,7 @@
 
     <!-- Project 3 -->
     <a href="project-3.html"
-       class="block p-6 rounded-2xl border border-zinc-200 hover:shadow-md transition">
+       class="project-card block p-6 rounded-2xl border border-zinc-200">
 
       <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-zinc-100">
         <img src="assets/images/project-3/portfolio_se_cover.jpg"
@@ -267,7 +291,7 @@
 
     <!-- pillple -->
     <a href="https://pillple.world/" target="_blank" rel="noopener"
-       class="block p-6 rounded-2xl border border-zinc-200 hover:shadow-md transition">
+       class="project-card block p-6 rounded-2xl border border-zinc-200">
 
       <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-zinc-100">
         <img src="assets/images/fun/pillple.png"
