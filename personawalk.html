@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>personawalk — Lujia Zhu</title>
+  <meta name="description" content="Pedestrian route choice simulation using persona-informed AI agents — conference poster." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/pdf-viewer.css" />
+</head>
+
+<body class="bg-white text-zinc-900">
+
+  <!-- ===== Top navigation ===== -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-zinc-900/80 backdrop-blur">
+    <div class="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-semibold tracking-tight text-white hover:opacity-80">
+        Lujia Zhu
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm text-zinc-300">
+        <a href="index.html#projects" class="hover:text-white">Projects</a>
+        <a href="index.html#research" class="hover:text-white">Research</a>
+        <a href="index.html#publications" class="hover:text-white">Publications</a>
+        <a href="index.html#contact" class="hover:text-white">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Hero / Project intro ===== -->
+  <section class="mx-auto max-w-6xl px-6 pt-16 pb-12">
+    <a href="index.html#projects"
+       class="text-sm text-zinc-500 hover:text-zinc-900">
+      ← Back to projects
+    </a>
+
+    <h1 class="mt-6 text-4xl md:text-5xl font-semibold tracking-tight">
+      personawalk
+    </h1>
+
+    <p class="mt-6 text-lg text-zinc-600 max-w-3xl">
+      Pedestrian Route Choice Simulation Using Persona-informed AI Agents.
+    </p>
+
+    <p class="mt-4 text-zinc-600 max-w-3xl">
+      Route-choice modelling underpins research on walkability, accessibility, and outdoor
+      thermal comfort — yet most approaches rely on representative agents following
+      utility-maximising rules, averaging away the differences between individual walkers.
+      This work gives each agent a persona and lets it choose its own way through the city.
+    </p>
+
+    <!-- Meta tags -->
+    <div class="mt-8 flex flex-wrap gap-3 text-sm">
+      <span class="px-3 py-1 rounded-full bg-zinc-100">Conference poster</span>
+      <span class="px-3 py-1 rounded-full bg-zinc-100">Agent-based simulation</span>
+      <span class="px-3 py-1 rounded-full bg-zinc-100">Persona / LLM agents</span>
+      <span class="px-3 py-1 rounded-full bg-zinc-100">Walkability</span>
+    </div>
+
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href="#viewer"
+         class="px-4 py-2 rounded-full bg-zinc-900 text-white text-sm hover:bg-zinc-800">
+        View the poster
+      </a>
+      <a href="assets/images/personawalk/poster.pdf" target="_blank" rel="noopener"
+         class="px-4 py-2 rounded-full border border-zinc-300 text-sm hover:bg-zinc-50">
+        Open PDF in new tab
+      </a>
+      <a href="assets/images/personawalk/poster.pdf" download
+         class="px-4 py-2 rounded-full border border-zinc-300 text-sm hover:bg-zinc-50">
+        Download PDF
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== Poster viewer — full screen (single A0 page, so no page arrows) ===== -->
+  <section id="viewer"
+           class="pdf-viewer relative w-full bg-zinc-950 text-zinc-100"
+           data-pdf-viewer
+           data-pdf-state="loading"
+           data-pdf-src="assets/images/personawalk/poster.pdf">
+
+    <div class="pdf-stage relative">
+
+      <div data-pdf-frame
+           class="absolute inset-0 flex items-center justify-center px-6 py-10 sm:px-12 sm:py-12">
+        <canvas data-pdf-canvas class="pdf-canvas rounded-sm shadow-2xl shadow-black/60"></canvas>
+
+        <div data-pdf-status
+             class="pdf-status absolute inset-0 flex items-center justify-center px-8 text-center text-sm text-zinc-400">
+          Loading poster…
+        </div>
+      </div>
+
+      <!-- Toolbar -->
+      <div class="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 items-center gap-3 rounded-full border border-white/15 bg-black/50 px-4 py-2 text-xs text-zinc-300 backdrop-blur">
+        <span class="hidden sm:block">A0 poster — open the PDF to zoom in</span>
+        <span class="hidden sm:block h-3 w-px bg-white/20"></span>
+        <a href="assets/images/personawalk/poster.pdf" target="_blank" rel="noopener"
+           class="transition hover:text-white">Open PDF</a>
+        <span class="h-3 w-px bg-white/20"></span>
+        <button type="button" data-pdf-fullscreen class="transition hover:text-white">
+          Full screen
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="border-t border-zinc-200">
+    <div class="mx-auto max-w-6xl px-6 py-10 text-sm text-zinc-500 flex items-center justify-between flex-wrap gap-3">
+      <span>© 2026 Lujia Zhu</span>
+      <a href="index.html#projects" class="hover:text-zinc-900">
+        Back to projects
+      </a>
+    </div>
+  </footer>
+
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script defer src="assets/js/pdf-viewer.js"></script>
+</body>
+</html>

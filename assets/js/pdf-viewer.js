@@ -257,10 +257,12 @@
       standardFontDataUrl: `${PDFJS_BASE}/standard_fonts/`,
     });
 
-    /* These portfolios are 14–25 MB, so show real progress. */
+    /* These files run to tens of MB, so show real progress. The label comes
+       from the markup, so each page words it its own way. */
+    const loadingLabel = (status.textContent || "Loading").trim().replace(/[….\s]+$/, "");
     loading.onProgress = ({ loaded, total }) => {
       if (!total || root.dataset.pdfState === "ready") return;
-      status.textContent = `Loading portfolio… ${Math.round((loaded / total) * 100)}%`;
+      status.textContent = `${loadingLabel}… ${Math.round((loaded / total) * 100)}%`;
     };
 
     loading.promise
