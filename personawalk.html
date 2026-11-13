@@ -34,7 +34,9 @@
       ← Back to projects
     </a>
 
-    <h1 class="mt-6 text-4xl md:text-5xl font-semibold tracking-tight">
+    <div class="mt-6 grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)]">
+    <div>
+    <h1 class="text-4xl md:text-5xl font-semibold tracking-tight">
       personawalk
     </h1>
 
@@ -70,6 +72,20 @@
          class="px-4 py-2 rounded-full border border-zinc-300 text-sm hover:bg-zinc-50">
         Download PDF
       </a>
+    </div>
+    </div>
+
+    <!-- Live demo: looping intro animation; the whole frame opens the interactive 3D map. -->
+    <a href="https://ziwaka99.github.io/PersonaWalk/" target="_blank" rel="noopener"
+       aria-label="Open the PersonaWalk interactive 3D map in a new tab"
+       class="group relative block aspect-[4/3] overflow-hidden rounded-2xl bg-[#061f0d] shadow-xl shadow-zinc-900/10 ring-1 ring-zinc-900/5 transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-900/25">
+      <iframe src="https://ziwaka99.github.io/PersonaWalk/intro/preview.html"
+              title="PersonaWalk intro animation" loading="lazy" tabindex="-1" aria-hidden="true"
+              class="pointer-events-none absolute inset-0 h-full w-full border-0"></iframe>
+      <span class="absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white/90 px-4 py-1.5 text-xs font-medium text-zinc-900 shadow transition duration-300 group-hover:bg-white">
+        Explore the interactive map ↗
+      </span>
+    </a>
     </div>
   </section>
 
