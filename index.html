@@ -84,12 +84,16 @@
       <span aria-hidden="true" class="invisible">Welcome to Z-World（：</span>
       <!-- The typed layer sits on top -->
       <span aria-hidden="true" class="absolute inset-0">
-        <span id="typeText"></span><span class="type-caret">|</span>
+        <span id="typeText"></span><span class="type-caret" data-caret="1">|</span>
       </span>
     </h1>
 
-    <p id="heroSubtitle" class="mt-6 text-lg md:text-xl text-zinc-600 max-w-3xl">
-      Hope you can find something interesting here!
+    <p class="relative mt-6 text-lg md:text-xl text-zinc-600 max-w-3xl">
+      <span class="sr-only">Hope you can find something interesting here!</span>
+      <span aria-hidden="true" class="invisible">Hope you can find something interesting here!</span>
+      <span aria-hidden="true" class="absolute inset-0">
+        <span id="typeText2"></span><span class="type-caret" data-caret="2" hidden>|</span>
+      </span>
     </p>
 
  
@@ -493,35 +497,59 @@
   </footer>
 
   <script>
-    /* Hero title: type the line out, hold it, rub it out, start again. */
+    /* Hero: type the title, then the line under it, hold both, rub them out
+       in reverse, and start again. One caret, on whichever line is active. */
     (() => {
-      const out = document.getElementById('typeText');
-      if (!out) return;
+      const title = document.getElementById('typeText');
+      const sub = document.getElementById('typeText2');
+      if (!title || !sub) return;
 
-      const chars = [...'Welcome to Z-World（：'];
+      const caret = {
+        1: document.querySelector('[data-caret="1"]'),
+        2: document.querySelector('[data-caret="2"]')
+      };
+
+      const TITLE = [...'Welcome to Z-World（：'];
+      const SUB = [...'Hope you can find something interesting here!'];
 
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        out.textContent = chars.join('');
+        title.textContent = TITLE.join('');
+        sub.textContent = SUB.join('');
         return;
       }
 
-      let i = 0;
-      let erasing = false;
+      const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-      (function tick() {
-        out.textContent = chars.slice(0, i).join('');
+      const focus = (n) => {
+        caret[1].hidden = n !== 1;
+        caret[2].hidden = n !== 2;
+      };
 
-        let wait;
-        if (!erasing) {
-          if (i < chars.length) { i++; wait = 105; }   // typing
-          else { erasing = true; wait = 2400; }        // hold the finished line
-        } else if (i > 0) {
-          i--; wait = 45;                              // backspacing, quicker
-        } else {
-          erasing = false; wait = 320;                 // a short beat, so the line is never blank for long
+      const write = async (el, chars, from, to, speed) => {
+        const step = to > from ? 1 : -1;
+        for (let i = from; i !== to + step; i += step) {
+          el.textContent = chars.slice(0, i).join('');
+          await sleep(speed);
         }
+      };
 
-        setTimeout(tick, wait);
+      (async () => {
+        for (;;) {
+          focus(1);
+          await write(title, TITLE, 1, TITLE.length, 105);
+          await sleep(420);
+
+          focus(2);
+          await write(sub, SUB, 1, SUB.length, 42);
+          await sleep(2600);                            // hold both lines
+
+          await write(sub, SUB, SUB.length - 1, 0, 24); // rub out, in reverse
+          await sleep(260);
+
+          focus(1);
+          await write(title, TITLE, TITLE.length - 1, 0, 42);
+          await sleep(420);
+        }
       })();
     })();
   </script>
