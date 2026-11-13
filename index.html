@@ -29,6 +29,20 @@
       .project-card:hover,
       .project-card:focus-visible { transform: none; }
     }
+
+    /* Blinking caret for the hero title's typewriter. */
+    .type-caret {
+      font-weight: 300;
+      color: #a1a1aa;
+      animation: caretBlink 1.05s steps(1) infinite;
+    }
+    @keyframes caretBlink {
+      0%, 49.9% { opacity: 1 }
+      50%, 100% { opacity: 0 }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .type-caret { animation: none; opacity: 0 }
+    }
   </style>
 </head>
 
@@ -63,9 +77,15 @@
   <!-- Hero (slide-like layout) -->
   <section class="mx-auto max-w-6xl px-6 pt-16 pb-10">
 
-  
-    <h1 id="heroTitle" class="mt-4 text-5xl md:text-6xl font-semibold tracking-tight">
-      Welcome to Z-World（：
+    <h1 class="relative mt-4 text-5xl md:text-6xl font-semibold tracking-tight">
+      <!-- The real title, for screen readers and search engines -->
+      <span class="sr-only">Welcome to Z-World（：</span>
+      <!-- An invisible copy holds the line box, so nothing jumps while typing -->
+      <span aria-hidden="true" class="invisible">Welcome to Z-World（：</span>
+      <!-- The typed layer sits on top -->
+      <span aria-hidden="true" class="absolute inset-0">
+        <span id="typeText"></span><span class="type-caret">|</span>
+      </span>
     </h1>
 
     <p id="heroSubtitle" class="mt-6 text-lg md:text-xl text-zinc-600 max-w-3xl">
@@ -74,14 +94,14 @@
 
  
 
-    <!-- Hero media (use your own image / GIF later) -->
-    <div class="mt-10 rounded-3xl overflow-hidden border border-zinc-200">
-       <img
+    <!-- Hero media — half width, centred -->
+    <div class="mt-10 mx-auto w-1/2 rounded-3xl overflow-hidden border border-zinc-200">
+      <img
         src="assets/images/hero/cat GIF.gif"
         alt="Hero media"
-        class="w-full h-full object-cover"
+        class="w-full h-auto block"
       >
-      </div>
+    </div>
   </section>
 
 
@@ -121,7 +141,7 @@
 <section id="research" class="py-14 border-t border-zinc-200">
   <h2 class="text-2xl md:text-3xl text-zinc-800">Research interests</h2>
 
-  <div class="mt-8 grid md:grid-cols-3 gap-6">
+  <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
     <!-- Card 1 -->
     <div class="p-6 rounded-2xl border border-zinc-200">
@@ -162,6 +182,20 @@
       <h3 class="mt-4 font-semibold">Perception study (neuroscience)</h3>
       <p class="mt-2 text-sm text-zinc-600">
         How perception and cognition shape comfort, preference, and behavioral responses.
+      </p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="p-6 rounded-2xl border border-zinc-200">
+      <div class="aspect-square w-full rounded-xl overflow-hidden bg-zinc-100">
+        <img src="assets/images/hero/behavior.gif"
+             class="w-full h-full object-cover"
+             alt="Behavior model">
+      </div>
+
+      <h3 class="mt-4 font-semibold">Behavior model</h3>
+      <p class="mt-2 text-sm text-zinc-600">
+        Observing the outdoor behaviour that makes up an active, healthy lifestyle.
       </p>
     </div>
 
@@ -458,5 +492,38 @@
     </div>
   </footer>
 
+  <script>
+    /* Hero title: type the line out, hold it, rub it out, start again. */
+    (() => {
+      const out = document.getElementById('typeText');
+      if (!out) return;
+
+      const chars = [...'Welcome to Z-World（：'];
+
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        out.textContent = chars.join('');
+        return;
+      }
+
+      let i = 0;
+      let erasing = false;
+
+      (function tick() {
+        out.textContent = chars.slice(0, i).join('');
+
+        let wait;
+        if (!erasing) {
+          if (i < chars.length) { i++; wait = 105; }   // typing
+          else { erasing = true; wait = 2400; }        // hold the finished line
+        } else if (i > 0) {
+          i--; wait = 45;                              // backspacing, quicker
+        } else {
+          erasing = false; wait = 320;                 // a short beat, so the line is never blank for long
+        }
+
+        setTimeout(tick, wait);
+      })();
+    })();
+  </script>
 </body>
 </html>
